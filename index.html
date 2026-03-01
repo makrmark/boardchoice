@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surfboard Selector | Find Your Perfect Board</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script type="module" crossorigin src="./assets/index-JnXgs_sX.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DPk5Wr8n.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="logo">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <path d="M8 32C12 24 20 16 32 12C28 20 28 28 32 36C20 36 12 40 8 32Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M32 12C36 16 38 24 38 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <h1>Surfboard Selector</h1>
+      </div>
+      <p class="tagline">Match the conditions to your perfect setup</p>
+    </header>
+
+    <main>
+      <section class="condition-selector">
+        <h2>🌊 Current Conditions</h2>
+        
+        <div class="selector-group">
+          <label for="waveHeight">Wave Height</label>
+          <select id="waveHeight">
+            <option value="knee">Knee High (1-2ft)</option>
+            <option value="waist">Waist High (2-3ft)</option>
+            <option value="chest" selected>Chest High (3-4ft)</option>
+            <option value="head">Head High (4-5ft)</option>
+            <option value="overhead">Overhead (5-7ft)</option>
+            <option value="double">Double Overhead+ (7ft+)</option>
+          </select>
+          <div class="visual-hint" id="heightHint"></div>
+        </div>
+
+        <div class="selector-group">
+          <label for="wavePower">Wave Power</label>
+          <select id="wavePower">
+            <option value="flat">Flat / Sloppy</option>
+            <option value="mushy">Mushy / Weak</option>
+            <option value="average" selected>Average / Medium</option>
+            <option value="powerful">Powerful / Steep</option>
+            <option value="hollow">Hollow / Barrel</option>
+          </select>
+        </div>
+
+        <div class="selector-group">
+          <label for="wind">Wind Conditions</label>
+          <select id="wind">
+            <option value="offshore" selected>Offshore (Clean)</option>
+            <option value="light">Light / Glassy</option>
+            <option value="cross">Cross-shore</option>
+            <option value="onshore">Onshore (Choppy)</option>
+            <option value="strong">Strong Wind</option>
+          </select>
+        </div>
+
+        <div class="selector-group">
+          <label for="breakType">Break Type</label>
+          <select id="breakType">
+            <option value="beach" selected>Beach Break</option>
+            <option value="point">Point Break</option>
+            <option value="reef">Reef Break</option>
+            <option value="rivermouth">River Mouth</option>
+          </select>
+        </div>
+
+        <div class="selector-group">
+          <label for="surferLevel">Your Level</label>
+          <select id="surferLevel">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate" selected>Intermediate</option>
+            <option value="advanced">Advanced</option>
+            <option value="expert">Expert</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="wave-preview">
+        <h2>Wave Preview</h2>
+        <div class="wave-display" id="waveDisplay">
+          <!-- SVG wave will be rendered here -->
+        </div>
+        <p class="wave-description" id="waveDescription">Chest high waves with average power</p>
+      </section>
+
+      <section class="recommendation">
+        <h2>🎯 Recommended Setup</h2>
+        
+        <div class="board-recommendation">
+          <h3>Surfboard</h3>
+          <div class="board-display" id="boardDisplay">
+            <!-- SVG board will be rendered here -->
+          </div>
+          <div class="board-info">
+            <h4 id="boardName">Funboard</h4>
+            <p id="boardDescription">6'2" - 6'6" hybrid with plenty of volume</p>
+          </div>
+        </div>
+
+        <div class="fin-recommendation">
+          <h3>Fin Setup</h3>
+          <div class="fin-display" id="finDisplay">
+            <!-- SVG fins will be rendered here -->
+          </div>
+          <div class="fin-info">
+            <h4 id="finName">Thruster</h4>
+            <p id="finDescription">3 fins for balanced drive and release</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="tips">
+        <h3>💡 Pro Tips</h3>
+        <ul id="tipsList">
+          <!-- Tips will be populated dynamically -->
+        </ul>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made for surfers, by surfers 🏄</p>
+    </footer>
+  </div>
+</body>
+</html>
