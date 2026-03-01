@@ -6,39 +6,37 @@
       Q 350 ${e-t*.4} 400 ${e}
     `:n==="average"?(d=`
       M 0 ${e}
-      Q 60 ${e-t*.4} 120 ${e-t*.7}
-      Q 180 ${e-t*1} 220 ${e-t*1.2}
-      Q 260 ${e-t*1.1} 300 ${e-t*.8}
-      Q 360 ${e-t*.5} 400 ${e}
+      C 60 ${e-t*.3} 100 ${e-t*.6} 140 ${e-t*.9}
+      C 165 ${e-t*1.2} 180 ${e-t*1.35} 195 ${e-t*1.4}
+      L 205 ${e-t*1.45}
+      C 215 ${e-t*1.35} 235 ${e-t*1.1} 260 ${e-t*.7}
+      C 310 ${e-t*.4} 360 ${e-t*.2} 400 ${e}
     `,c=`
-      M 100 ${e-t*.5}
-      Q 150 ${e-t*.8} 200 ${e-t*1}
-      Q 250 ${e-t*.9} 280 ${e-t*.7}
+      M 180 ${e-t*1.25}
+      C 195 ${e-t*1.4} 205 ${e-t*1.38} 210 ${e-t*1.25}
     `):n==="powerful"?(d=`
       M 0 ${e}
-      Q 80 ${e-t*.5} 140 ${e-t*.9}
-      Q 180 ${e-t*1.3} 210 ${e-t*1.5}
-      Q 240 ${e-t*1.4} 280 ${e-t*1}
-      Q 340 ${e-t*.6} 400 ${e}
+      C 50 ${e-t*.3} 90 ${e-t*.7} 130 ${e-t*1.1}
+      C 155 ${e-t*1.4} 175 ${e-t*1.6} 190 ${e-t*1.65}
+      L 200 ${e-t*1.7}
+      C 215 ${e-t*1.55} 240 ${e-t*1.2} 270 ${e-t*.8}
+      C 320 ${e-t*.4} 360 ${e-t*.2} 400 ${e}
     `,c=`
-      M 150 ${e-t*.8}
-      Q 180 ${e-t*1.2} 200 ${e-t*1.35}
-      Q 230 ${e-t*1.2} 260 ${e-t*.8}
+      M 170 ${e-t*1.45}
+      C 185 ${e-t*1.6} 198 ${e-t*1.58} 202 ${e-t*1.4}
     `):n==="hollow"&&(d=`
       M 0 ${e}
-      Q 60 ${e-t*.4} 100 ${e-t*.8}
-      Q 130 ${e-t*1.2} 150 ${e-t*1.5}
-      Q 170 ${e-t*1.6} 190 ${e-t*1.5}
-      Q 210 ${e-t*1.3} 240 ${e-t*.9}
-      Q 300 ${e-t*.5} 400 ${e}
+      C 40 ${e-t*.3} 80 ${e-t*.7} 110 ${e-t*1.2}
+      C 135 ${e-t*1.6} 150 ${e-t*1.85} 165 ${e-t*1.9}
+      L 175 ${e-t*1.95}
+      C 190 ${e-t*1.8} 215 ${e-t*1.4} 245 ${e-t*.9}
+      C 290 ${e-t*.5} 340 ${e-t*.25} 400 ${e}
     `,p=`
-      M 140 ${e-t*.9}
-      Q 160 ${e-t*1.4} 180 ${e-t*1.3}
-      Q 200 ${e-t*1} 190 ${e-t*.6}
+      M 155 ${e-t*1.5}
+      C 165 ${e-t*1.8} 175 ${e-t*1.75} 180 ${e-t*1.5}
     `,c=`
-      M 130 ${e-t*.7}
-      Q 150 ${e-t*1.2} 180 ${e-t*1.35}
-      Q 210 ${e-t*1.2} 230 ${e-t*.7}
+      M 160 ${e-t*1.4}
+      C 170 ${e-t*1.7} 180 ${e-t*1.75} 185 ${e-t*1.55}
     `);const g=i==="offshore"?30:i==="onshore"?-30:0,u=i==="offshore"?"#ff6b6b":i==="onshore"?"#4ecdc4":"#888";return`
     <svg viewBox="0 0 ${h} ${f}" xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -90,7 +88,7 @@
         <path d="M 300 ${e+20} Q 340 ${e+10} 380 ${e+25}" fill="none"/>
       </g>
     </svg>
-  `}function b(s){const o={softboard:{path:"M 30 70 Q 50 20 150 15 Q 250 20 270 70 Q 250 130 150 135 Q 50 130 30 70 Z",width:70,length:240},minimax:{path:"M 40 70 Q 55 25 150 18 Q 245 25 260 70 Q 245 115 150 120 Q 55 115 40 70 Z",width:60,length:220},funboard:{path:"M 50 70 Q 60 30 150 22 Q 240 30 250 70 Q 240 110 150 115 Q 60 110 50 70 Z",width:55,length:200},hybrid:{path:"M 60 70 Q 68 35 150 28 Q 232 35 240 70 Q 232 105 150 112 Q 68 105 60 70 Z",width:50,length:180},shortboard:{path:"M 70 70 Q 75 40 150 35 Q 225 40 230 70 Q 225 100 150 105 Q 75 100 70 70 Z",width:45,length:160},stepup:{path:"M 60 70 Q 68 32 150 25 Q 232 32 240 70 Q 232 108 150 115 Q 68 108 60 70 Z",width:52,length:180},gun:{path:"M 50 70 Q 60 25 150 18 Q 240 25 250 70 Q 240 112 150 120 Q 60 112 50 70 Z",width:48,length:200},biggun:{path:"M 40 70 Q 55 20 150 12 Q 245 20 260 70 Q 245 118 150 128 Q 55 118 40 70 Z",width:55,length:220}},i=o[s]||o.shortboard;return`
+  `}function $(s){const o={softboard:{path:"M 30 70 Q 50 20 150 15 Q 250 20 270 70 Q 250 130 150 135 Q 50 130 30 70 Z",width:70,length:240},minimax:{path:"M 40 70 Q 55 25 150 18 Q 245 25 260 70 Q 245 115 150 120 Q 55 115 40 70 Z",width:60,length:220},funboard:{path:"M 50 70 Q 60 30 150 22 Q 240 30 250 70 Q 240 110 150 115 Q 60 110 50 70 Z",width:55,length:200},hybrid:{path:"M 60 70 Q 68 35 150 28 Q 232 35 240 70 Q 232 105 150 112 Q 68 105 60 70 Z",width:50,length:180},shortboard:{path:"M 70 70 Q 75 40 150 35 Q 225 40 230 70 Q 225 100 150 105 Q 75 100 70 70 Z",width:45,length:160},stepup:{path:"M 60 70 Q 68 32 150 25 Q 232 32 240 70 Q 232 108 150 115 Q 68 108 60 70 Z",width:52,length:180},gun:{path:"M 50 70 Q 60 25 150 18 Q 240 25 250 70 Q 240 112 150 120 Q 60 112 50 70 Z",width:48,length:200},biggun:{path:"M 40 70 Q 55 20 150 12 Q 245 20 260 70 Q 245 118 150 128 Q 55 118 40 70 Z",width:55,length:220}},i=o[s]||o.shortboard;return`
     <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="boardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -121,7 +119,7 @@
       <!-- Tail detail -->
       <ellipse cx="150" cy="120" rx="12" ry="4" fill="#f5e6c8" stroke="#a08060" stroke-width="1"/>
     </svg>
-  `}function $(s,o="#1a3a5c"){const i={thruster:`
+  `}function b(s,o="#1a3a5c"){const i={thruster:`
       <svg viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="boardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
@@ -204,5 +202,5 @@
         
         <text x="150" y="170" text-anchor="middle" font-size="14" fill="#5a6a7a" font-family="Outfit">2+1</text>
       </svg>
-    `};return i[s]||i.thruster}function k(s){const o=s.waveHeight,i=s.wavePower,l=s.surferLevel;let r;o==="knee"||o==="waist"?r="small":o==="chest"||o==="head"?r="medium":r="large";let a,t,n;return r==="small"?l==="beginner"?(a="softboard",t="Softboard / Foamie",n=o==="knee"?`6'0" - 8'0" with 50-70L for maximum float`:`7'0" - 8'0" with 40-60L for learning`):i==="mushy"||i==="flat"?(a="minimax",t="Mini Malibu",n=`7'0" - 8'0" - extra foam for weak waves`):(a="funboard",t="Funboard",n=`6'4" - 6'10" - versatile for small conditions`):r==="medium"?l==="beginner"||l==="intermediate"?(a="hybrid",t="Hybrid / Fish",n=`5'10" - 6'4" - great all-rounder`):(a="shortboard",t="Shortboard",n=`5'10" - 6'2" - performance machine`):o==="overhead"?(a="stepup",t="Step-up",n=`6'4" - 7'0" - extra paddle power`):(a="gun",t="Big Wave Gun",n=`7'0" - 8'0" - built for charging`),{boardType:a,boardName:t,description:n}}function x(s){const o=s.waveHeight,i=s.wavePower,l=s.breakType;let r;o==="knee"||o==="waist"?r="small":o==="chest"||o==="head"?r="medium":r="large";let a;i==="mushy"||i==="flat"||i==="hollow"&&r==="large"?a="quad":r==="small"?a=Math.random()>.5?"quad":"2plus1":a="thruster";const n=(m[r]||m.medium)[a]||{name:"Thruster",description:"Classic 3-fin setup"};return{finType:a,...n}}function Q(s){const o=[],{waveHeight:i,wavePower:l,wind:r,breakType:a,surferLevel:t}=s;return(i==="knee"||i==="waist")&&(o.push("More volume = more fun in small waves. Go for a wider, thicker board."),o.push("Paddle into every wave you can - they're few and far between!")),(i==="overhead"||i==="double")&&(o.push("Paddle hard! You'll need maximum paddle power to catch the wave."),o.push("Don't blow your first wave - wait for the right one.")),l==="hollow"&&(o.push("Get in early for the barrel, but be ready to generate speed on the face."),o.push("A quad setup or thruster will give you extra hold in the pocket.")),l==="mushy"&&(o.push("Pump for speed - there's no free speed in weak waves."),o.push("A twin or quad fin setup helps generate momentum.")),r==="offshore"&&(o.push("Perfect groomed faces - this is the dream conditions!"),o.push("Watch for sections closing out as the wind pushes the wave from behind.")),r==="onshore"&&(o.push("Expect choppy conditions - look for sections that are more organized."),o.push("A lower aspect ratio board will handle the messy conditions better.")),a==="reef"&&(o.push("Respect the reef - technique is key in powerful reef waves."),o.push("A thruster gives you maximum control in hollow reef breaks.")),a==="beach"&&(o.push("Watch for shifting sandbanks - conditions can change daily."),o.push("A hybrid or fish works great in beach break punchy waves.")),t==="beginner"&&(o.push("Start small and work your way up - there's no shame in knee-high waves!"),o.push("A longer, thicker board will make learning much easier.")),t==="expert"&&i==="double"&&(o.push("Big wave charging requires mental preparation as much as physical."),o.push("Consider your tow-in options for waves beyond your paddle ability.")),o.length<3&&(o.push("Always check the buoy reports before heading out."),o.push("The best surfer out there is the one having the most fun!")),o.slice(0,5)}function y(){var f,e;const s={waveHeight:document.getElementById("waveHeight").value,wavePower:document.getElementById("wavePower").value,wind:document.getElementById("wind").value,breakType:document.getElementById("breakType").value,surferLevel:document.getElementById("surferLevel").value},o=v(s.waveHeight,s.wavePower,s.wind);document.getElementById("waveDisplay").innerHTML=o;const i=((f=s.waveHeight[s.waveHeight])==null?void 0:f.name)||s.waveHeight,l=((e=s.wavePower[s.wavePower])==null?void 0:e.name)||s.wavePower;document.getElementById("waveDescription").textContent=`${i} waves with ${l.toLowerCase()} conditions`;const r=k(s),a=x(s);document.getElementById("boardDisplay").innerHTML=b(r.boardType),document.getElementById("boardName").textContent=r.boardName,document.getElementById("boardDescription").textContent=r.description;const t=s.wavePower==="hollow"?"#ff6b6b":s.wavePower==="powerful"?"#4ecdc4":"#1a3a5c";document.getElementById("finDisplay").innerHTML=$(a.finType,t),document.getElementById("finName").textContent=a.name,document.getElementById("finDescription").textContent=a.description;const n=Q(s),h=document.getElementById("tipsList");h.innerHTML=n.map(d=>`<li>${d}</li>`).join("")}document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("select").forEach(o=>{o.addEventListener("change",y)}),y()});
-//# sourceMappingURL=index-JnXgs_sX.js.map
+    `};return i[s]||i.thruster}function k(s){const o=s.waveHeight,i=s.wavePower,l=s.surferLevel;let r;o==="knee"||o==="waist"?r="small":o==="chest"||o==="head"?r="medium":r="large";let a,t,n;return r==="small"?l==="beginner"?(a="softboard",t="Softboard / Foamie",n=o==="knee"?`6'0" - 8'0" with 50-70L for maximum float`:`7'0" - 8'0" with 40-60L for learning`):i==="mushy"||i==="flat"?(a="minimax",t="Mini Malibu",n=`7'0" - 8'0" - extra foam for weak waves`):(a="funboard",t="Funboard",n=`6'4" - 6'10" - versatile for small conditions`):r==="medium"?l==="beginner"||l==="intermediate"?(a="hybrid",t="Hybrid / Fish",n=`5'10" - 6'4" - great all-rounder`):(a="shortboard",t="Shortboard",n=`5'10" - 6'2" - performance machine`):o==="overhead"?(a="stepup",t="Step-up",n=`6'4" - 7'0" - extra paddle power`):(a="gun",t="Big Wave Gun",n=`7'0" - 8'0" - built for charging`),{boardType:a,boardName:t,description:n}}function x(s){const o=s.waveHeight,i=s.wavePower,l=s.breakType;let r;o==="knee"||o==="waist"?r="small":o==="chest"||o==="head"?r="medium":r="large";let a;i==="mushy"||i==="flat"||i==="hollow"&&r==="large"?a="quad":r==="small"?a=Math.random()>.5?"quad":"2plus1":a="thruster";const n=(m[r]||m.medium)[a]||{name:"Thruster",description:"Classic 3-fin setup"};return{finType:a,...n}}function L(s){const o=[],{waveHeight:i,wavePower:l,wind:r,breakType:a,surferLevel:t}=s;return(i==="knee"||i==="waist")&&(o.push("More volume = more fun in small waves. Go for a wider, thicker board."),o.push("Paddle into every wave you can - they're few and far between!")),(i==="overhead"||i==="double")&&(o.push("Paddle hard! You'll need maximum paddle power to catch the wave."),o.push("Don't blow your first wave - wait for the right one.")),l==="hollow"&&(o.push("Get in early for the barrel, but be ready to generate speed on the face."),o.push("A quad setup or thruster will give you extra hold in the pocket.")),l==="mushy"&&(o.push("Pump for speed - there's no free speed in weak waves."),o.push("A twin or quad fin setup helps generate momentum.")),r==="offshore"&&(o.push("Perfect groomed faces - this is the dream conditions!"),o.push("Watch for sections closing out as the wind pushes the wave from behind.")),r==="onshore"&&(o.push("Expect choppy conditions - look for sections that are more organized."),o.push("A lower aspect ratio board will handle the messy conditions better.")),a==="reef"&&(o.push("Respect the reef - technique is key in powerful reef waves."),o.push("A thruster gives you maximum control in hollow reef breaks.")),a==="beach"&&(o.push("Watch for shifting sandbanks - conditions can change daily."),o.push("A hybrid or fish works great in beach break punchy waves.")),t==="beginner"&&(o.push("Start small and work your way up - there's no shame in knee-high waves!"),o.push("A longer, thicker board will make learning much easier.")),t==="expert"&&i==="double"&&(o.push("Big wave charging requires mental preparation as much as physical."),o.push("Consider your tow-in options for waves beyond your paddle ability.")),o.length<3&&(o.push("Always check the buoy reports before heading out."),o.push("The best surfer out there is the one having the most fun!")),o.slice(0,5)}function y(){var f,e;const s={waveHeight:document.getElementById("waveHeight").value,wavePower:document.getElementById("wavePower").value,wind:document.getElementById("wind").value,breakType:document.getElementById("breakType").value,surferLevel:document.getElementById("surferLevel").value},o=v(s.waveHeight,s.wavePower,s.wind);document.getElementById("waveDisplay").innerHTML=o;const i=((f=s.waveHeight[s.waveHeight])==null?void 0:f.name)||s.waveHeight,l=((e=s.wavePower[s.wavePower])==null?void 0:e.name)||s.wavePower;document.getElementById("waveDescription").textContent=`${i} waves with ${l.toLowerCase()} conditions`;const r=k(s),a=x(s);document.getElementById("boardDisplay").innerHTML=$(r.boardType),document.getElementById("boardName").textContent=r.boardName,document.getElementById("boardDescription").textContent=r.description;const t=s.wavePower==="hollow"?"#ff6b6b":s.wavePower==="powerful"?"#4ecdc4":"#1a3a5c";document.getElementById("finDisplay").innerHTML=b(a.finType,t),document.getElementById("finName").textContent=a.name,document.getElementById("finDescription").textContent=a.description;const n=L(s),h=document.getElementById("tipsList");h.innerHTML=n.map(d=>`<li>${d}</li>`).join("")}document.addEventListener("DOMContentLoaded",()=>{document.querySelectorAll("select").forEach(o=>{o.addEventListener("change",y)}),y()});
+//# sourceMappingURL=index-OTsKlDd-.js.map
