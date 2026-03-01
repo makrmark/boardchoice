@@ -126,53 +126,52 @@ function generateWaveSVG(height, power, wind) {
       Q 350 ${waterLevel - waveHeight * 0.4} 400 ${waterLevel}
     `;
   } else if (curlType === 'average') {
-    // Nice shaping wave
+    // Nice shaping wave - just starting to break
     wavePath = `
       M 0 ${waterLevel}
-      Q 60 ${waterLevel - waveHeight * 0.4} 120 ${waterLevel - waveHeight * 0.7}
-      Q 180 ${waterLevel - waveHeight * 1.0} 220 ${waterLevel - waveHeight * 1.2}
-      Q 260 ${waterLevel - waveHeight * 1.1} 300 ${waterLevel - waveHeight * 0.8}
-      Q 360 ${waterLevel - waveHeight * 0.5} 400 ${waterLevel}
+      C 60 ${waterLevel - waveHeight * 0.3} 100 ${waterLevel - waveHeight * 0.6} 140 ${waterLevel - waveHeight * 0.9}
+      C 165 ${waterLevel - waveHeight * 1.2} 180 ${waterLevel - waveHeight * 1.35} 195 ${waterLevel - waveHeight * 1.4}
+      L 205 ${waterLevel - waveHeight * 1.45}
+      C 215 ${waterLevel - waveHeight * 1.35} 235 ${waterLevel - waveHeight * 1.1} 260 ${waterLevel - waveHeight * 0.7}
+      C 310 ${waterLevel - waveHeight * 0.4} 360 ${waterLevel - waveHeight * 0.2} 400 ${waterLevel}
     `;
+    // The lip curling over
     foamPath = `
-      M 100 ${waterLevel - waveHeight * 0.5}
-      Q 150 ${waterLevel - waveHeight * 0.8} 200 ${waterLevel - waveHeight * 1.0}
-      Q 250 ${waterLevel - waveHeight * 0.9} 280 ${waterLevel - waveHeight * 0.7}
+      M 180 ${waterLevel - waveHeight * 1.25}
+      C 195 ${waterLevel - waveHeight * 1.4} 205 ${waterLevel - waveHeight * 1.38} 210 ${waterLevel - waveHeight * 1.25}
     `;
   } else if (curlType === 'powerful') {
-    // Steep, powerful wave
+    // Steep, powerful wave - heavy lip
     wavePath = `
       M 0 ${waterLevel}
-      Q 80 ${waterLevel - waveHeight * 0.5} 140 ${waterLevel - waveHeight * 0.9}
-      Q 180 ${waterLevel - waveHeight * 1.3} 210 ${waterLevel - waveHeight * 1.5}
-      Q 240 ${waterLevel - waveHeight * 1.4} 280 ${waterLevel - waveHeight * 1.0}
-      Q 340 ${waterLevel - waveHeight * 0.6} 400 ${waterLevel}
+      C 50 ${waterLevel - waveHeight * 0.3} 90 ${waterLevel - waveHeight * 0.7} 130 ${waterLevel - waveHeight * 1.1}
+      C 155 ${waterLevel - waveHeight * 1.4} 175 ${waterLevel - waveHeight * 1.6} 190 ${waterLevel - waveHeight * 1.65}
+      L 200 ${waterLevel - waveHeight * 1.7}
+      C 215 ${waterLevel - waveHeight * 1.55} 240 ${waterLevel - waveHeight * 1.2} 270 ${waterLevel - waveHeight * 0.8}
+      C 320 ${waterLevel - waveHeight * 0.4} 360 ${waterLevel - waveHeight * 0.2} 400 ${waterLevel}
     `;
     foamPath = `
-      M 150 ${waterLevel - waveHeight * 0.8}
-      Q 180 ${waterLevel - waveHeight * 1.2} 200 ${waterLevel - waveHeight * 1.35}
-      Q 230 ${waterLevel - waveHeight * 1.2} 260 ${waterLevel - waveHeight * 0.8}
+      M 170 ${waterLevel - waveHeight * 1.45}
+      C 185 ${waterLevel - waveHeight * 1.6} 198 ${waterLevel - waveHeight * 1.58} 202 ${waterLevel - waveHeight * 1.4}
     `;
   } else if (curlType === 'hollow') {
-    // Barrel wave
+    // Barrel wave - hollow and pitching
     wavePath = `
       M 0 ${waterLevel}
-      Q 60 ${waterLevel - waveHeight * 0.4} 100 ${waterLevel - waveHeight * 0.8}
-      Q 130 ${waterLevel - waveHeight * 1.2} 150 ${waterLevel - waveHeight * 1.5}
-      Q 170 ${waterLevel - waveHeight * 1.6} 190 ${waterLevel - waveHeight * 1.5}
-      Q 210 ${waterLevel - waveHeight * 1.3} 240 ${waterLevel - waveHeight * 0.9}
-      Q 300 ${waterLevel - waveHeight * 0.5} 400 ${waterLevel}
+      C 40 ${waterLevel - waveHeight * 0.3} 80 ${waterLevel - waveHeight * 0.7} 110 ${waterLevel - waveHeight * 1.2}
+      C 135 ${waterLevel - waveHeight * 1.6} 150 ${waterLevel - waveHeight * 1.85} 165 ${waterLevel - waveHeight * 1.9}
+      L 175 ${waterLevel - waveHeight * 1.95}
+      C 190 ${waterLevel - waveHeight * 1.8} 215 ${waterLevel - waveHeight * 1.4} 245 ${waterLevel - waveHeight * 0.9}
+      C 290 ${waterLevel - waveHeight * 0.5} 340 ${waterLevel - waveHeight * 0.25} 400 ${waterLevel}
     `;
-    // The barrel
+    // The barrel opening
     barrelPath = `
-      M 140 ${waterLevel - waveHeight * 0.9}
-      Q 160 ${waterLevel - waveHeight * 1.4} 180 ${waterLevel - waveHeight * 1.3}
-      Q 200 ${waterLevel - waveHeight * 1.0} 190 ${waterLevel - waveHeight * 0.6}
+      M 155 ${waterLevel - waveHeight * 1.5}
+      C 165 ${waterLevel - waveHeight * 1.8} 175 ${waterLevel - waveHeight * 1.75} 180 ${waterLevel - waveHeight * 1.5}
     `;
     foamPath = `
-      M 130 ${waterLevel - waveHeight * 0.7}
-      Q 150 ${waterLevel - waveHeight * 1.2} 180 ${waterLevel - waveHeight * 1.35}
-      Q 210 ${waterLevel - waveHeight * 1.2} 230 ${waterLevel - waveHeight * 0.7}
+      M 160 ${waterLevel - waveHeight * 1.4}
+      C 170 ${waterLevel - waveHeight * 1.7} 180 ${waterLevel - waveHeight * 1.75} 185 ${waterLevel - waveHeight * 1.55}
     `;
   }
   
